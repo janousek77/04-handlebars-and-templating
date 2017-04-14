@@ -10,7 +10,26 @@
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="icon" type="image/x-icon" href="https://avatars2.githubusercontent.com/u/18607604?v=3&s=200">
-
+    <!-- <script type="text/x-handlebars-template" id="template">
+      <article class="template" data-category="cat">
+      <header>
+        <h1>{{title}}</h1>
+        <div class="byline">
+          By <address><a href="{{authorUrl}}">{{author}}</a></address>
+          published <time pubdate datetime={{publishedOn}}>Publish Time</time>
+          {{body}}
+        </div>
+      </header>
+      <section class="article-body"></section>
+      <a href="#" class="read-on">Read on &rarr;</a>
+    </article> -->
+      <script id="article-template" type="text/x-handlebars-template">
+  <h1>{{title}}</h1>
+  <a href="{{authorUrl}}">{{author}}</a>
+  <time>Article was published {{daysAgo}} days ago.</time>
+  {{{body}}}
+</script>
+    </script>
     <!--
       TODO: Add a script tag to hold the Handlebars template.
         - Be sure to give it a meaningful id attribute.
@@ -55,6 +74,9 @@
           </ul>
         </div>
       </section>
+      <div id="app">
+
+      </div>
       <section id="about" class="tab-content">
         <header>
           Welcome to my Blog
@@ -72,9 +94,8 @@
     <footer>
       &copy; 2017 Code Fellows | Static Blog | Happy Ipsum!
     </footer>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- TODO: Include Handlebars.JS from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
     <script src="scripts/blogArticles.js"></script>
     <script src="scripts/article.js"></script>
     <script src="scripts/articleView.js"></script>
