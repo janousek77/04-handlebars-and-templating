@@ -13,7 +13,6 @@ function Article (rawDataObj) {
 
 Article.prototype.toHtml = function() {
   var template = $('#article-template').html();
-  // template.attr('data-author',this.author);
   var render = Handlebars.compile(template);
   this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
   this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)';
